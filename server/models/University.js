@@ -34,7 +34,7 @@ var universitySchema = mongoose.Schema({
         type: String,
         min: [1, 'Too few characters'],
         max: 20,
-    }
+    },
     secondaryColor: {
         type: String,
         min: [1, 'Too few characters'],

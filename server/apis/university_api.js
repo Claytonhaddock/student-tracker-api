@@ -1,4 +1,4 @@
-var Trip  = require('../models/Trip');
+var University = require('../models/University');
 
 exports.index = function(req, res) {
   University
