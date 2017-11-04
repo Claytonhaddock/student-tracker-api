@@ -4,28 +4,48 @@
 // load the things we need
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
+var session  = require('./Session');
+var schema   = mongoose.Schema;
 
 // define the schema for our user model
-var userSchema = mongoose.Schema({
+var userSchema = new Schema({
 
-    username: {
+    name: {
         type: String,
         min: [1, 'Too few characters'],
         max: 100,
-        required: [true, 'Please enter a username.']
+        required: [true, 'Please enter a name.']
     },
-    email: {
+    role: {
         type: String,
-        min: [3, 'Please enter an email in the correct format'],
-        required: [true, 'Please enter an email']
-    },
-    password: {
+        required: [true, 'Please enter a role.']
+    }
+    sessions: [{
+        type: schema.ObjectId,
+        ref: 'Session'
+    }],
+    cohort: {
         type: String,
-        min: [8, 'Your password must be at least 8 characters large'],
-        required: [true, 'Please enter a password.']
+        // min: [8, 'Your password must be at least 8 characters large'],
+        required: [true, 'Please enter cohort.']
     },
 
 });
+
+// {
+//   userid: {
+//     type: Number,
+//     unique: true
+//   },
+//   name: {
+//     type: String,
+//     required: true
+//   },
+//   cohort: {
+//     type: String,
+//     required: true
+//   }
+// }
 
 // methods ======================
 // generating a hash
