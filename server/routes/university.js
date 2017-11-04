@@ -1,11 +1,9 @@
 var express = require('express');
 var router  = express.Router();
 
-var trips_api = require('../apis/trips_api');
+var university_api = require('../apis/university_api');
 var authCheck = require("../config/middleware/authCheck");
 
-router.get('/', authCheck, trips_api.index);
-
-router.post('/new', authCheck, trips_api.createTrip);
+router.get('/', authCheck, university_api.index);
 
 module.exports = router;

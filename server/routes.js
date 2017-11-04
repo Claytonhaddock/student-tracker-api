@@ -1,12 +1,12 @@
 module.exports = function(app){
 		// Our model controllers (rather than routes)
 		var users = require('./routes/users');
-		var trips = require('./routes/trips');
+		var university = require('./routes/university');
 
 		const authCheckMiddleware = require('./config/middleware/authCheck');
-		app.use('/apis/trips', authCheckMiddleware);
+		app.use('/apis/university', authCheckMiddleware);
 
 		app.use('/apis/users', users);
-		app.use('/apis/trips', trips);
+		app.use('/apis/university', university);
 		//other routes..
 }
