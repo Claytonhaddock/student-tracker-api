@@ -9,8 +9,6 @@ var sessionSchema = mongoose.Schema({
 
     date: {
         type: Date,
-        // min: [1, 'Too few characters'],
-        // max: 100,
         required: [true, 'Please enter a date.']
     },
     instructor: {
@@ -19,7 +17,6 @@ var sessionSchema = mongoose.Schema({
     },
     endGoals: {
         type: String,
-        // min: [1, 'Please enter an arrival date with at least 1 character'],
         required: [false, 'Please enter an arrival date']
     },
     actionsTakenThisWeek: {
@@ -42,19 +39,6 @@ var sessionSchema = mongoose.Schema({
         ref: 'User'
     }
 });
-
-
-// {
-//       date: Date.now,
-//       instructor: {
-//         type: String,
-//         required: true
-//       },
-//       endGoals: String,
-//       instActionsThisWeek: String,
-//       instActionsLastWeek: String,
-//       careerActions: String
-// }
 
 // create the model for users and expose it to our app
 module.exports = mongoose.model('Session', sessionSchema);

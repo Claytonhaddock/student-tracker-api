@@ -27,26 +27,9 @@ var userSchema = new Schema({
     cohort: {
         type: schema.ObjectId,
         ref: 'Cohort'
-        // min: [8, 'Your password must be at least 8 characters large'],
-        //required: [true, 'Please enter cohort.']
     },
 
 });
-
-// {
-//   userid: {
-//     type: Number,
-//     unique: true
-//   },
-//   name: {
-//     type: String,
-//     required: true
-//   },
-//   cohort: {
-//     type: String,
-//     required: true
-//   }
-// }
 
 // methods ======================
 // generating a hash
