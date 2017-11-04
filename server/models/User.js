@@ -25,9 +25,10 @@ var userSchema = new Schema({
         ref: 'Session'
     }],
     cohort: {
-        type: String,
+        type: schema.ObjectId,
+        ref: 'Cohort'
         // min: [8, 'Your password must be at least 8 characters large'],
-        required: [true, 'Please enter cohort.']
+        //required: [true, 'Please enter cohort.']
     },
 
 });
