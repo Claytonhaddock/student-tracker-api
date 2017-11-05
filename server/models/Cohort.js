@@ -3,6 +3,7 @@
 // app/models/user.js
 // load the things we need
 var mongoose = require('mongoose');
+var schema = mongoose.Schema;
 
 // define the schema for our user model
 var cohortSchema = mongoose.Schema({
@@ -22,7 +23,7 @@ var cohortSchema = mongoose.Schema({
     startDate: Date,
     endDate: Date,
     classes: [],
-    students: [{ type: Schema.ObjectId, ref: 'Student' }],
+    students: [{ type: schema.ObjectId, ref: 'Student' }],
 });
 
 // create the model for users and expose it to our app
