@@ -4,8 +4,10 @@
 // load the things we need
 var mongoose = require('mongoose');
 
+var schema   = mongoose.Schema;
+
 // define the schema for our user model
-var sessionSchema = mongoose.Schema({
+var sessionSchema = schema({
 
     date: {
         type: Date,
@@ -35,7 +37,7 @@ var sessionSchema = mongoose.Schema({
         required: [false, 'Please career actions']
     },
     UserId: {
-        type: Schema.ObjectId,
+        type: schema.ObjectId,
         ref: 'User'
     }
 });

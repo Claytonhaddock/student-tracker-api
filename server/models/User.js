@@ -8,7 +8,7 @@ var session  = require('./Session');
 var schema   = mongoose.Schema;
 
 // define the schema for our user model
-var userSchema = new Schema({
+var userSchema = new schema({
 
     name: {
         type: String,
@@ -19,7 +19,7 @@ var userSchema = new Schema({
     role: {
         type: String,
         required: [true, 'Please enter a role.']
-    }
+    },
     sessions: [{
         type: schema.ObjectId,
         ref: 'Session'
@@ -27,8 +27,7 @@ var userSchema = new Schema({
     cohort: {
         type: schema.ObjectId,
         ref: 'Cohort'
-    },
-
+    }
 });
 
 // methods ======================

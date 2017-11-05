@@ -1,12 +1,13 @@
 var University = require('../models/University');
 
 exports.index = function(req, res) {
-  University
-  .find()
-  .where('id').equals(req.id)
-  .then(function(university){
-    res.json(university);
-  })
+  // University
+  // .find()
+  // .where('id').equals(req.id)
+  // .then(function(university){
+  //   res.json(university);
+  // })
+    res.send("butt");
 };
 
 // exports.createTrip = function(req, res) {
