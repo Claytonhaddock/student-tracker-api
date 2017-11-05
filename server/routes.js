@@ -4,7 +4,8 @@ module.exports = function(app){
 		var university = require('./routes/university');
 
 		const authCheckMiddleware = require('./config/middleware/authCheck');
-		app.use('/apis/university', authCheckMiddleware);
+		// Put back when auth works
+		// app.use('/apis/university', authCheckMiddleware);
 
 		app.use('/apis/users', users);
 		app.use('/apis/university', university);
