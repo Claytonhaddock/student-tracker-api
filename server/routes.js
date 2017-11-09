@@ -3,6 +3,7 @@ module.exports = function(app){
 		var users = require('./routes/users');
 		var universities = require('./routes/universities');
 		var cohorts = require('./routes/cohorts');
+		var students = require('./routes/students');
 
 		const authCheckMiddleware = require('./config/middleware/authCheck');
 		// Put back when auth works
@@ -11,5 +12,7 @@ module.exports = function(app){
 		app.use('/apis/users', users);
 		app.use('/apis/universities', universities);
 		app.use('/apis/cohorts', cohorts);
+		app.use('/apis/students', students);
+
 		//other routes..
 }
