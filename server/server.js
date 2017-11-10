@@ -5,8 +5,11 @@ var path           = require('path');
 var logger         = require('morgan');
 var cookieParser   = require('cookie-parser'); // for working with cookies
 var bodyParser     = require('body-parser');
-var passport 			 = require("./config/passport");
-var config				 = require("./config/extra-config");
+var passport 	   = require("./config/passport");
+var config		   = require("./config/extra-config");
+var mongoose       = require('mongoose');
+
+mongoose.Promise = global.Promise;
 
 // Express settings
 // ================
