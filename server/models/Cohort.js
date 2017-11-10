@@ -21,9 +21,9 @@ var cohortSchema = mongoose.Schema({
         required: [true, 'Please enter what type of program you are creating. For instance, part-time, full-time, etc.']
     },
     startDate: Date,
-    endDate: Date,
-    classes: [],
-    students: [{ type: schema.ObjectId, ref: 'Student' }],
+    endDate: Date
+    // classes: [],
+    // students: [{ type: schema.ObjectId, ref: 'Student' }],
 });
 
 // create the model for users and expose it to our app

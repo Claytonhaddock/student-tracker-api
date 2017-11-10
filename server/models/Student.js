@@ -15,10 +15,10 @@ var studentSchema = new schema({
         max: 100,
         required: [true, 'Please enter a name.']
     },
-    sessions: [{
-        type: Array,//schema.ObjectId,
-        ref: 'Session'
-    }],
+    // sessions: [{
+    //     type: Array,//schema.ObjectId,
+    //     ref: 'Session'
+    // }],
     cohort: {
         type: String,//schema.ObjectId,
         ref: 'Cohort'
