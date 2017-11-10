@@ -1,4 +1,4 @@
-var Cohort = require('../models/Student');
+var Student = require('../models/Student');
 
 exports.index = function(req, res) {
   Student

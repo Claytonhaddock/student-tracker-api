@@ -16,11 +16,11 @@ var studentSchema = new schema({
         required: [true, 'Please enter a name.']
     },
     sessions: [{
-        type: schema.ObjectId,
+        type: Array,//schema.ObjectId,
         ref: 'Session'
     }],
     cohort: {
-        type: schema.ObjectId,
+        type: String,//schema.ObjectId,
         ref: 'Cohort'
     }
 });
