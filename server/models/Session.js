@@ -36,9 +36,9 @@ var sessionSchema = schema({
         min: [1, 'Please enter an arrival date with at least 1 character'],
         required: [false, 'Please career actions']
     },
-    UserId: {
-        type: schema.ObjectId,
-        ref: 'User'
+    studentName: {
+        type: String,
+        required: [true, 'Please enter a student name']
     }
 });
 

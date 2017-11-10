@@ -28,8 +28,8 @@ var universitySchema = mongoose.Schema({
         type: String,
         min: [1, 'Too few characters']
     },
-    ongoingCohorts: [],
-    completedCohorts: [],
+    // ongoingCohorts: [],
+    // completedCohorts: [],
     primaryColor: {
         type: String,
         min: [1, 'Too few characters'],
@@ -40,7 +40,7 @@ var universitySchema = mongoose.Schema({
         min: [1, 'Too few characters'],
         max: 20,
     },
-    cohorts: []
+    // cohorts: []
 });
 
 // create the model for users and expose it to our app
