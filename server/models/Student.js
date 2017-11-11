@@ -15,13 +15,18 @@ var studentSchema = new schema({
         max: 100,
         required: [true, 'Please enter a name.']
     },
+    github: {
+        type: String,
+        required: [true, ]
+    },
     // sessions: [{
     //     type: Array,//schema.ObjectId,
     //     ref: 'Session'
     // }],
     cohort: {
         type: String,//schema.ObjectId,
-        ref: 'Cohort'
+        // ref: 'Cohort'
+        required: [true, 'Please enter a cohort']
     }
 });
 

@@ -20,6 +20,10 @@ var cohortSchema = mongoose.Schema({
         max: 100,
         required: [true, 'Please enter what type of program you are creating. For instance, part-time, full-time, etc.']
     },
+    university: {
+        type: String,
+        required: [true, 'please add university']
+    },
     startDate: Date,
     endDate: Date
     // classes: [],
