@@ -17,7 +17,7 @@ var studentSchema = new schema({
     },
     github: {
         type: String,
-        required: [true, ]
+        required: [true, 'Please enter github url.']
     },
     // sessions: [{
     //     type: Array,//schema.ObjectId,
