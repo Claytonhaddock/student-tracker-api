@@ -19,6 +19,18 @@ var studentSchema = new schema({
         type: String,
         required: [true, 'Please enter github url.']
     },
+    endGoal: {
+        type: String
+    },
+    education: {
+        type: String
+    },
+    careerBackground: {
+        type: String
+    },
+    codingExperience: {
+        type: String
+    },
     // sessions: [{
     //     type: Array,//schema.ObjectId,
     //     ref: 'Session'

@@ -17,21 +17,21 @@ var sessionSchema = schema({
         type: String,
         required: [true, 'Please enter an instructor']
     },
-    endGoals: {
-        type: String,
-        required: [false, 'Please enter an arrival date']
-    },
-    actionsTakenThisWeek: {
+    // endGoals: {
+    //     type: String,
+    //     required: [false, 'Please enter an arrival date']
+    // },
+    reflection: {
         type: String,
         min: [1, 'Your method of transport must be one of the choices provided'],
         required: [false, 'Please enter actions taken this week']
     },
-    instActionsLastWeek: {
-        type: String,
-        min: [1, 'Please enter an arrival date with at least 1 character'],
-        required: [false, 'Please enter actions taken last week']
-    },
-    careerActions: {
+    // instActionsLastWeek: {
+    //     type: String,
+    //     min: [1, 'Please enter an arrival date with at least 1 character'],
+    //     required: [false, 'Please enter actions taken last week']
+    // },
+    actions: {
         type: String,
         min: [1, 'Please enter an arrival date with at least 1 character'],
         required: [false, 'Please career actions']
