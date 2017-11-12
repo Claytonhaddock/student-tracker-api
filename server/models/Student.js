@@ -31,15 +31,15 @@ var studentSchema = new schema({
     codingExperience: {
         type: String
     },
-    // sessions: [{
-    //     type: Array,//schema.ObjectId,
-    //     ref: 'Session'
-    // }],
+    sessions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Session'
+    }]/*,
     cohort: {
         type: String,//schema.ObjectId,
         // ref: 'Cohort'
         required: [true, 'Please enter a cohort']
-    }
+    }*/
 });
 
 // create the model for users and expose it to our app

@@ -1,4 +1,4 @@
-var db         = require("../models");
+var db         = require("../models/index");
 
 exports.index = function(req, res) {
   db.University
@@ -25,7 +25,7 @@ exports.createUniversity = function(req, res) {
 	// Add id from User onto req.body (add in once auth has been taken care of)
 	// req.body.UserId = req.user.id;
 
-  var newUniversity = new University(req.body);
+  var newUniversity = new db.University(req.body);
 
   newUniversity.save().then(function(dbPost) {
     res.json(dbPost);
