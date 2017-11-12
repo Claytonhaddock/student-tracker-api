@@ -14,6 +14,32 @@ var cohortSchema = mongoose.Schema({
         max: 100,
         required: [true, 'Please enter a unique Cohort Indentifier provided by Trilogy']
     },
+    instructor: {
+        type: String,
+        required: [true, 'please enter an instructor name']
+    },
+    ssm: {
+        type: String,
+        required: [true, 'Please enter an SSM']
+    },
+    ta: {
+        type: Array,
+        required: [true, 'Please enter at least one ta']    
+    },
+    classInfo: {
+        day: {
+            type: String,
+            required: [true, 'Please enter day']
+        },
+        time: {
+            type: String,
+            require: [true, 'Please enter time']
+        },
+        location: {
+            type: String,
+            required: [true, 'Please enter location']
+        }
+    },
     type: {
         type: String,
         min: [1, 'Too few characters'],

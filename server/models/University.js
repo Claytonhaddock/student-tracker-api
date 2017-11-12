@@ -40,6 +40,12 @@ var universitySchema = mongoose.Schema({
         min: [1, 'Too few characters'],
         max: 20,
     },
+    cohorts : [
+        { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Cohort' 
+        }
+    ]
     // cohorts: []
 });
 
