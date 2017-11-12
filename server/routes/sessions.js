@@ -8,6 +8,6 @@ var authCheck = require("../config/middleware/authCheck");
 // router.get('/', authCheck, university_api.index);
 
 router.get('/', session_api.index);
-router.post('/create', session_api.createSession);
+router.post('/create/:id', session_api.createSession);
 
 module.exports = router;

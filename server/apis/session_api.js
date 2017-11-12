@@ -1,7 +1,7 @@
-var Session = require('../models/Session');
+var db = require('../models');
 
 exports.index = function(req, res) {
-  Session
+  db.Session
   .find()
   .then(function(session){
     res.json(session);
@@ -10,13 +10,23 @@ exports.index = function(req, res) {
 };
 
 exports.createSession = function(req, res) {
-
-	// Add id from User onto req.body (add in once auth has been taken care of)
-	// req.body.UserId = req.user.id;
-
-  var newSession = new Session(req.body);
-
-  newSession.save().then(function(dbPost) {
-    res.json(dbPost);
-  });
-};
+    db.Session
+        .create(req.body)
+        .then(function(dbStudent) {
+                return db.Student.findOneAndUpdate(
+                  { 
+                    _id: req.params.id 
+                  },
+                  {$push: {sessions: dbStudent._id}},
+                  { 
+                    new: true 
+                  }
+                );
+            })
+            .then(function(dbStudent) {
+                res.json(dbStudent);
+            })
+            .catch(function(err) {
+                res.json(err);
+            });
+        }

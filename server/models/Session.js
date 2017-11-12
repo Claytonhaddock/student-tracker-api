@@ -35,11 +35,11 @@ var sessionSchema = schema({
         type: String,
         min: [1, 'Please enter an arrival date with at least 1 character'],
         required: [false, 'Please career actions']
-    },
+    }/*,
     studentId: {
         type: Number,
         required: [true, 'Please enter a student id']
-    }
+    }*/
 });
 
 // create the model for users and expose it to our app

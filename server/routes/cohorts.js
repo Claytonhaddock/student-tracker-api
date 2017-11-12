@@ -8,6 +8,7 @@ var authCheck = require("../config/middleware/authCheck");
 // router.get('/', authCheck, cohort_api.index);
 
 router.get('/', cohort_api.index);
+router.get('/cohort/:id', cohort_api.findStudents);
 router.post('/create/:id', cohort_api.createCohort);
 
 module.exports = router;
