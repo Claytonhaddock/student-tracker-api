@@ -1,22 +1,31 @@
-var Cohort = require('../models/Cohort');
+var db = require('../models');
 
 exports.index = function(req, res) {
-  Cohort
-  .find()
-  .then(function(cohorts){
-    res.json(cohorts);
-  })
-    // res.send("butt");
+    db.Cohort
+        .find()
+        .then(function(cohorts) {
+            res.json(cohorts);
+        })
 };
 
 exports.createCohort = function(req, res) {
-
-	// Add id from User onto req.body (add in once auth has been taken care of)
-	// req.body.UserId = req.user.id;
-
-  var newCohort = new Cohort(req.body);
-
-  newCohort.save().then(function(dbPost) {
-    res.json(dbPost);
-  });
-};
+        db.Cohort
+            .create(req.body)
+            .then(function(dbCohort) {
+                    return db.University.findOneAndUpdate(
+                      { 
+                        _id: req.params.id 
+                      },
+                      {$push: {cohorts: dbCohort._id}},
+                      { 
+                        new: true 
+                      }
+                    );
+                })
+                .then(function(dbUniversity) {
+                    res.json(dbUniversity);
+                })
+                .catch(function(err) {
+                    res.json(err);
+                });
+            }

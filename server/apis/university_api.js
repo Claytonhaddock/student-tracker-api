@@ -1,13 +1,24 @@
-var University = require('../models/University');
+var db         = require("../models");
 
 exports.index = function(req, res) {
-  University
-  .find()
+  db.University
+  .find({})
   .then(function(universities){
     res.json(universities);
   })
-    // res.send("butt");
 };
+
+exports.findCohorts = function(req, res){
+  db.University
+    .findOne({ _id: req.params.id })
+    .populate("cohorts")
+    .then(function(dbUniverstiyWithCohorts) {
+      res.json(dbUniverstiyWithCohorts);
+    })
+    .catch(function(err) {
+      res.json(err);
+    })
+}
 
 exports.createUniversity = function(req, res) {
 
